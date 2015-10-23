@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      Raclette: <input ng-model="query">
+      Choucroute:
+      <select ng-model="orderProp">
+        <option value="name">Chou</option>
+        <option value="age">Jarret</option>
+      </select>
+      Texte : <input ng-model="texte" />
+      Email : <input ng-model="email" />
+      <input type="button" class="btn btn-info" ng-click="setEmail('{{email}}', '{{texte}}')" value="Envoyer EMail" />
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="phones">
+        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp"
+            class="thumbnail phone-listing">
+          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
