@@ -30,6 +30,10 @@ phonecatApp.config(['$routeProvider',
           templateUrl: 'partials/modification.html',
           controller: 'PhoneDetailModif'
       }).
+      when('/contact', {
+          templateUrl: 'partials/contact.html',
+          controller: 'ContactCtrl'
+      }).
       otherwise({
         redirectTo: '/phones'
       });
